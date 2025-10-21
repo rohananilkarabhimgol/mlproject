@@ -30,31 +30,20 @@ class CustomException(Exception):
         # 3. When exception is printed, show the detailed message
         return self.error_message
 
-"""
-# When this executes:
-self.error_message = error_message_details(error_message, error_detail)
-
-# What happens:
-# 1. The constructor's 'error_message' parameter value is passed
-# 2. It becomes the 'error' parameter in error_message_details()
-# 3. Inside the function, a NEW local variable 'error_message' is created
-# 4. This local variable is returned and stored in self.error_message
-"""
-
-import logging
-import logger # This sets up logging
-if __name__ =="__main__":
-    try:
-        a = 1/0
-    except Exception as e:
-        logging.info("Zero Division Error!")
-        logging.warning("This is a warning you cannot divide a number by zero!")
+# import logging
+# import logger # This sets up logging
+# if __name__ =="__main__":
+#     try:
+#         a = 1/0
+#     except Exception as e:
+#         logging.info("Zero Division Error!")
+#         logging.warning("This is a warning you cannot divide a number by zero!")
         
-        # Create the custom exception
-        custom_exception = CustomException(e, sys)
+#         # Create the custom exception
+#         custom_exception = CustomException(e, sys)
         
-        # Log it to file
-        logging.error(str(custom_exception))  # ← Save to log file
+#         # Log it to file
+#         logging.error(str(custom_exception))  # ← Save to log file
         
-        # Also raise it for console
-        raise custom_exception  # ← Show in console
+#         # Also raise it for console
+#         raise custom_exception  # ← Show in console
